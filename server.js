@@ -1,24 +1,45 @@
-var express = require('express');
-var app = express();
-var jwt = require('express-jwt');
-require('dotenv').config();
+// =================================================================
+// require all necessary packages & our .env config file ===========
+// =================================================================
 
-if (!process.env.AUTH0_CLIENT_ID || !process.env.AUTH0_SECRET){
-  throw 'Make sure you have AUTH0_CLIENT_ID and AUTH0_SECRET in your .env file'
-}
+const express = require('express');
+const cors = require('cors');
+const app = express();
+const bodyParser = require('body-parser');
 
-var authenticate = jwt({
-  secret: new Buffer(process.env.AUTH0_SECRET, 'base64'),
-  audience: process.env.AUTH0_CLIENT_ID
-});
 
-app.get('/api/public', function(req, res) {
-  res.json({ message: "Hello from a public endpoint! You don't need to be authenticated to see this." });
-});
 
-app.get('/api/private', authenticate, function(req, res) {
-  res.json({ message: "Hello from a private endpoint! You DO need to be authenticated to see this." });
-});
+
+// =================================================================
+// app setup & configuration =======================================
+// =================================================================
+
+app.locals.trains = [
+  { id: 1, line: 'green', status: 'running' },
+  { id: 2, line: 'blue', status: 'delayed' },
+  { id: 3, line: 'red', status: 'down' },
+  { id: 4, line: 'orange', status: 'maintenance' }
+];
+
+// Use body parser so we can get info from POST/URL parameters
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors());
+
+
+
+// =================================================================
+// API Endpoints ===================================================
+// =================================================================
+
+// This is all you baby!
+
+
+
+
+// =================================================================
+// start the server ================================================
+// =================================================================
 
 app.listen(3001);
 console.log('Listening on http://localhost:3001');

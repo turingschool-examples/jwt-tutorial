@@ -1,5 +1,5 @@
-@import url("styles/colors.css");
-
+/*@import url("styles/colors.css");
+*/
 *,
 *:after,
 *:before {
@@ -8,8 +8,6 @@
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-
-    font-size: 16px;
 }
 
 body {
@@ -18,5 +16,19 @@ body {
   font: 400 15px/22px 'Open Sans', 'Helvetica Neue', Sans-serif;
   font-smoothing: antialiased;
   padding: 0;
-  margin: 0;
+  margin: 0px;
+}
+
+h1 {
+  border-bottom: 1px solid #eac7df;
+  padding: 20px;
+  background: #333;
+  color: #eee;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 400;
+  width: 77%;
+  margin: 0 auto;
 }

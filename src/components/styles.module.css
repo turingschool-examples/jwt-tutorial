@@ -1,0 +1,97 @@
+.train {
+  padding: 10px 0 30px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  width: 47%;
+  margin: 2% 1%;
+}
+
+.red { background-color: #b35656; }
+.green { background-color: #56b356; }
+.blue { background-color: #5691b3; }
+.orange { background-color: #d6a45b; }
+
+.train h3 {
+  color: rgba(0,0,0,0.6);
+  text-transform: uppercase;
+  margin: 0px;
+  font-size: 16px;
+}
+
+.train p {
+  font-size: 28px;
+  font-weight: 200;
+  color: #fff;
+  text-align: center;
+}
+
+.train select {
+  display: block;
+  margin: 0 auto;
+}
+
+
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.auth {
+  text-align: right;
+}
+
+.auth a:link, .auth a:visited {
+  border: 1px solid #fff;
+  padding: 5px 10px;
+  margin: 0px 20px;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.auth a:hover {
+  border: 1px solid #333;
+  background: #fff;
+  color: #222;
+}
+
+.login {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.login label {
+  display: block;
+  margin: 5px 0px;
+  text-align: center;
+}
+
+.login input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 10px 15px;
+  font-size: 24px;
+  font-weight: 200;
+  margin: 5px auto;
+}
+
+.login button {
+  color: #eee;
+  border-radius: 3px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 200;
+  font-size: 20px;
+  padding: 10px 50px;
+  border: 1px solid #000;
+  background: #333;
+}
