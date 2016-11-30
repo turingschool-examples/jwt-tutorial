@@ -1,18 +1,27 @@
 import React from 'react'
-import {browserHistory, Router, Route, Redirect} from 'react-router'
+import {Route, IndexRedirect} from 'react-router'
+import Container from './components/Container'
+import Home from './components/Home'
+import Admin from './components/Admin'
+import Login from './components/Login'
 
-import makeMainRoutes from './views/Main/routes'
+const requireAuth = (nextState, replace) => {
+  console.log("NEXT STATE: ", nextState);
+  let token = localStorage.getItem('token');
+  if (!token) {
+    replace({ pathname: '/login/?next=admin' })
+  }
+}
 
-export const makeRoutes = () => {
-  const main = makeMainRoutes();
-
+export const makeMainRoutes = () => {
   return (
-    <Route path=''>
-      {main}
+    <Route path="/" component={Container}>
+      <IndexRedirect to="/home" />
+      <Route path="home" component={Home} />
+      <Route path="admin" component={Admin} onEnter={requireAuth} />
+      <Route path="login/*" component={Login} />
     </Route>
   )
 }
 
-
-
-export default makeRoutes
+export default makeMainRoutes

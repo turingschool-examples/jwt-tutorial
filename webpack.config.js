@@ -35,7 +35,7 @@ var config = getConfig({
   },
   devServer: {
     proxy: {
-      context: "/api",
+      context: "/api/v1",
       options: {
         target: "http://localhost:3001"
       }
