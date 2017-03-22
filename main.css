@@ -1,0 +1,38 @@
+body, html {
+  font-family: 'Helvetica Neue';
+  margin: 0;
+}
+
+h1 {
+  border-bottom: 4px double #b5dfd6;
+  font-weight: 100;
+  padding: 15px 20px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+nav {
+  background-color: #b5dfd6;
+  border-right: 1px solid rgba(0,0,0,0.1);
+  padding: 10px 30px;
+}
+
+nav ul {
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+#content {
+  flex-grow: 2;
+  padding: 10px 50px;
+}
