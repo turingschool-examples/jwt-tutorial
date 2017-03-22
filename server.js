@@ -26,10 +26,10 @@ app.locals.trains = [
 // Use body parser so we can get info from POST/URL parameters
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors());
 
 // Err out early on if we are missing configuration variables
-if (!config.CLIENT_SECRET || !config.USERNAME || !config.PASSWORD){
+if (!config.CLIENT_SECRET || !config.USERNAME || !config.PASSWORD) {
   throw 'Make sure you have a CLIENT_SECRET, USERNAME, and PASSWORD in your .env file'
 }
 
@@ -108,7 +108,7 @@ app.get('/api/v1/trains', (request, response) => {
 });
 
 // Private API Endpoint
-app.patch('/api/v1/trains/:id', (request, response) => {
+app.patch('/api/v1/trains/:id', checkAuth, (request, response) => {
   const { train } = request.body;
   const { id } = request.params;
   const index = app.locals.trains.findIndex((m) => m.id == id);
