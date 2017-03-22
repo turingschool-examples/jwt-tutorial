@@ -38,8 +38,6 @@ app.set('secretKey', config.CLIENT_SECRET);
 
 // Create a function to check the authentication for private endpoints
 const checkAuth = (request, response, next) => {
-  console.log("REQUEST BODY: ", request.body);
-  console.log("REQUEST HEADERS: ", request.headers);
 
   // Check headers/POST body/URL params for an authorization token
   const token = request.body.token || 
