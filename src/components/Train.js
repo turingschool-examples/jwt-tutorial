@@ -5,10 +5,8 @@ import classNames from 'classnames';
 const Train = ({ token, id, line, status, canEdit, updateTrains }) => {
 
   const updateStatus = (event) => {
-    console.log("TOKEN: ", token);
     const value = event.target.value;
     const trainId = event.target.dataset.trainid;
-    console.log("VALUE: ", value);
 
     fetch(`/api/v1/trains/${trainId}`, {
       method: 'PATCH',
@@ -25,7 +23,7 @@ const Train = ({ token, id, line, status, canEdit, updateTrains }) => {
     .then(updatedTrains => {
       updateTrains(updatedTrains);
     })
-    .catch(error => console.log("ERROR: ", error));
+    .catch(error => console.log('Error: ', error));
   }
 
   return (

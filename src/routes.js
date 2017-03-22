@@ -6,7 +6,6 @@ import Admin from './components/Admin'
 import Login from './components/Login'
 
 const requireAuth = (nextState, replace) => {
-  console.log("NEXT STATE: ", nextState);
   let token = localStorage.getItem('token');
   if (!token) {
     replace({ pathname: '/login/?next=admin' })

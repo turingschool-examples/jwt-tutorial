@@ -5,13 +5,9 @@ export class Login extends React.Component {
   constructor(props) {
     super(props);
 
-    const redirectRoute = this.props.location.query.next || 'admin';
-    console.log("REDIRECT ROUTE: ", redirectRoute);
-
     this.state = {
       username: '',
-      password: '',
-      redirectTo: redirectRoute
+      password: ''
     }
   }
 
@@ -23,12 +19,11 @@ export class Login extends React.Component {
   }
 
   login(event) {
-    const { username, password, redirectTo } = this.state;
     const { updateAuthStatus } = this.props;
 
     fetch('http://localhost:3001/authenticate', {
       method: 'POST',
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify(this.state),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -38,7 +33,7 @@ export class Login extends React.Component {
         throw Error(response.statusText);
       }
       
-      return response.json()
+      return response.json();
     })
     .then(({ username, token }) => {
       localStorage.setItem('token', token);
@@ -50,7 +45,7 @@ export class Login extends React.Component {
       }, 'admin');
     })
     .catch(error => {
-      console.log("Error: ", error);
+      console.log('Error: ', error);
     });
   }
 
