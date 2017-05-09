@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <h1>Authenticating Single-Page Applications with JSON Web Tokens</h1>
+    <div id="wrapper">
+      <nav>
+        <ul>
+          <li>
+            <span class="section-header">Introducing JWTs</span>
+            <ul>
+              <li class="active">What is a JWT</li>
+              <li>Structure of a JWT</li>
+              <li>What are they for?</li>
+              <li>How can we use them?</li>
+            </ul>
+          </li>
+          <li>
+            <span class="section-header">Tutorial: Implementing JWTs</span>
+            <ul>
+              <li>Getting Started</li>
+              <li>Securing API Endpoints</li>
+              <li>Protecting a Client-Side Route</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div id="content">
+        <h2>What is a JWT?</h2>
+        <p>JSON Web Tokens, JWTs for short, provide us with a compact way to securely transmit data as an encoded JSON object. JSON objects are simple and compact, making them easy to pass along as query strings, headers, and request bodies. Similar to API Keys that help verify access to an API, JSON web tokens can be passed along to your server requests, and look something like this:</p>
+
+        <pre>
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+          eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.
+          TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+        </pre>
+
+        <p>This might look familiar to the API Tokens you may have used when interacting with public APIs or third-party services such as Firebase.</p>
+
+        <p>A JSON Web Token allows you to identify/authenticate a user in your application by passing a verified string (the the above example) through the header, URL, or body of a request which proves the user is trustworthy and allowed to access the desired content. (This content could be on an admin dashboard page or received through a GET request for an array of data.)</p>
+
+        <p>Though it’s nice that the JWT is so compact and we can simply pass this string of numbers and letters around in a number of ways, it’s tough to understand what it actually represents. Let’s break down the anatomy of a JWT.</p>
+      </div>
+  </body>
+</html>
